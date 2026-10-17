@@ -38,6 +38,6 @@ struct Token {
         ) : type(type), lexeme(std::move(lexeme)), literal(std::move(literal)), line(line) {}
 
     std::string toString() {
-        return std::to_string(static_cast<int>(type)) + ' ' + lexeme + ' ' + literal;
+        return std::to_string(static_cast<int>(type)) + " " + lexeme + " " + literal;
     }
 };

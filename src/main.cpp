@@ -3,8 +3,14 @@
 #include <string>
 #include <fstream>
 #include "../include/error.h"
+#include "../include/scanner.h"
 
-static void run(const std::string& s) {
+static void run(const std::string& source) {
+    Scanner scanner(source);
+    scanner.scanTokens();
+    for (auto token : scanner.tokens) {
+        std::cout << token.toString() << '\n';
+    }
 }
 
 static int runInteractive() {
@@ -12,7 +18,7 @@ static int runInteractive() {
 
     while (true) {
         std::cout << "> ";
-        std::cin >> line;
+        std::getline(std::cin, line);
 
         if (std::cin.eof()) break;
 
