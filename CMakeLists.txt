@@ -3,6 +3,6 @@ project(jlox)
 
 set(CMAKE_CXX_STANDARD 26)
 
-add_executable(jlox main.cpp
-        error.cpp
-        error.h)
+add_executable(jlox src/main.cpp
+        src/error.cpp
+        include/error.h)

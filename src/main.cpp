@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 #include <fstream>
-#include "error.h"
+#include "../include/error.h"
 
 static void run(const std::string& s) {
 }
