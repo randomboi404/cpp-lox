@@ -5,4 +5,5 @@ set(CMAKE_CXX_STANDARD 26)
 
 add_executable(jlox src/main.cpp
         src/error.cpp
-        include/error.h)
+        include/error.h
+        include/token.h)
