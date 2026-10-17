@@ -2,20 +2,22 @@
 #include <vector>
 #include <string>
 #include <fstream>
+#include "error.h"
 
-static int run(const std::string& s) {
-    return 0;
+static void run(const std::string& s) {
 }
 
 static int runInteractive() {
     std::string line;
 
-    while (1) {
+    while (true) {
         std::cout << "> ";
         std::cin >> line;
 
         if (std::cin.eof()) break;
+
         run(line);
+        hadError = false;
     }
 
     return 0;
@@ -25,7 +27,10 @@ static int runFile(const std::string& file) {
     std::ifstream scriptFile(file);
     std::string program(std::istreambuf_iterator<char>(scriptFile), {});
 
-    return run(program);
+    run(program);
+
+    if (hadError) return -1;
+    return 0;
 }
 
 int main(const int argc, char** argv) {
