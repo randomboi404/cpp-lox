@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 4.3)
-project(jlox)
+project(cpp-lox)
 
 set(CMAKE_CXX_STANDARD 26)
 
-add_executable(jlox src/main.cpp
+add_executable(cpp-lox src/main.cpp
         src/error.cpp
         src/scanner.cpp
         include/error.h
